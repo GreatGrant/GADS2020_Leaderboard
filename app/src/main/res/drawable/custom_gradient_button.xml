@@ -1,0 +1,16 @@
+
+<shape xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:shape="rectangle">
+<corners android:radius="16dp"/>
+<padding android:left="16dp"
+    android:right="16dp"/>
+<size android:height="2dp"
+    android:width="6dp"/>
+<gradient
+    android:angle="180"
+    android:centerColor="@color/color_button_center"
+    android:endColor="@color/color_buttom_end"
+    android:startColor="@color/color_button_end"/>
+<corners android:radius="70dp"/>
+</shape>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Leaderboard</string>
+    <string name="tab_text_1">Learning Leaders</string>
+    <string name="tab_text_2">Skill IQ leaders</string>
+    <string name="hello">hello_blank_fragment</string>
+    <string name="submit">Submit</string>
+</resources>
