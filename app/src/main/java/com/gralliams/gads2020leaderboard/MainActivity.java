@@ -1,5 +1,6 @@
 package com.gralliams.gads2020leaderboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+findViewById(R.id.submi_btn).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SubmitActivity.class)));
 
     }
 }
