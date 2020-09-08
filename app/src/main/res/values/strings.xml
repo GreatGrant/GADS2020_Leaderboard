@@ -4,7 +4,7 @@
     <string name="tab_text_2">Skill IQ leaders</string>
     <string name="hello">hello_blank_fragment</string>
     <string name="submit">Submit</string>
-    <string name="title_activity_submit">SubmitActivity</string>
+    <string name="title_activity_submit"> </string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -13,4 +13,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="name">Name</string>
+    <string name="form_surname">form surname</string>
+    <string name="email">Email</string>
+    <string name="project_on_github_link">Project on GITHUB (link)</string>
 </resources>

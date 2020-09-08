@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SubmitActivity"
-            android:label="@string/title_activity_submit"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MainActivity"
