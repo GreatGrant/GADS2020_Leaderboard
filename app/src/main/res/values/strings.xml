@@ -23,4 +23,10 @@
     <string name="home">Home</string>
     <string name="ok">OK</string>
     <string name="success">Success</string>
+    <string name="submission_not_successful">Submission not successful</string>
+    <string name="are_you_sure">Are you sure   </string>
+    <string name="yes">YES</string>
+    <string name="check">check</string>
+    <string name="cancel">cancel</string>
+    <string name="question_mark">question_mark</string>
 </resources>
