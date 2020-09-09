@@ -99,7 +99,7 @@ public class SkillIqLeadersFragment extends Fragment {
             public void onFailure(Call<List<SkillIqLeaders>> call, Throwable t) {
                 Log.e("TAG", "Response: "+t.toString());
                 mResponse.setVisibility(View.VISIBLE);
-                mResponse.setText(t.toString());
+                mResponse.setText(R.string.connection_error_message);
                 mProgressBar.setVisibility(View.INVISIBLE);
             }
         });

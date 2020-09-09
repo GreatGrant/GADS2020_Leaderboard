@@ -106,7 +106,7 @@ public class LearningLeadersFragment extends Fragment {
             public void onFailure(Call<List<LearningLeaders>> call, Throwable t) {
                 Log.d("TAG", "Response = "+t.toString());
                 mResponse.setVisibility(View.VISIBLE);
-                mResponse.setText(t.toString());
+                mResponse.setText(R.string.connection_error_message);
                 mProgressBar.setVisibility(View.INVISIBLE);
             }
         });

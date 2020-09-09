@@ -18,4 +18,9 @@
     <string name="email">Email</string>
     <string name="project_on_github_link">Project on GITHUB (link)</string>
     <string name="splash_screen">splash_screen</string>
+    <string name="connection_error_message">Failed to connect, check your internet connection</string>
+    <string name="submission_succesful">Submission Successful</string>
+    <string name="home">Home</string>
+    <string name="ok">OK</string>
+    <string name="success">Success</string>
 </resources>

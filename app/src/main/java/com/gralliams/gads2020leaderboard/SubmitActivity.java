@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import retrofit2.Call;
@@ -14,6 +15,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -32,7 +34,9 @@ public class SubmitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_keyboard_backspace_24);
         setSupportActionBar(toolbar);
+
 
         findViewById(R.id.submit_project_button).setOnClickListener(view -> sendProjectInfo());
 
@@ -61,7 +65,7 @@ public class SubmitActivity extends AppCompatActivity {
                     clearfields();
                     if (response.isSuccessful()) {
 
-                        Toast.makeText(SubmitActivity.this, "Success! " + response.message(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SubmitActivity.this, "Success! " + response.code(), Toast.LENGTH_SHORT).show();
                         Log.v("TAG", response.message() + response.code());
                     } else {
                         Toast.makeText(SubmitActivity.this, "failed! " + response.message() + " " +
@@ -97,5 +101,15 @@ public class SubmitActivity extends AppCompatActivity {
                     build();
         }
         return mRetrofit;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
+
+
     }
 }

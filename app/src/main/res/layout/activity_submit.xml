@@ -6,22 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".SubmitActivity">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="114dp"
-        android:background="@drawable/gads"
-        app:layout_anchor="@+id/appBarLayout"
-        app:layout_anchorGravity="center"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:background="@drawable/gads"
+            app:layout_anchor="@+id/appBarLayout"
+            app:layout_anchorGravity="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_submit" />
