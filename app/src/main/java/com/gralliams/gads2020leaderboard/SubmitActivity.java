@@ -1,12 +1,10 @@
 package com.gralliams.gads2020leaderboard;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +17,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,6 +36,9 @@ public class SubmitActivity extends AppCompatActivity {
     private String mUserEmail;
     private String mUserGitLink;
     private String mUserSurname;
+    private Dialog mFailureDialog;
+    private Dialog mSuccessDialog;
+    private Dialog mPermissionDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,46 +81,62 @@ public class SubmitActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 clearfields();
                 if (response.isSuccessful()) {
-                    Toast.makeText(SubmitActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                    // showSuccessDialog();
+                    mPermissionDialog.dismiss();
+                    showSuccessDialog();
                     Log.v("TAG", response.message() + response.code());
                 } else {
-                    Toast.makeText(SubmitActivity.this, "failed! " + response.message() + " " +
-                                    response.code(),
-                            Toast.LENGTH_SHORT).show();
-                    //showFailureDialog();
+//                    Toast.makeText(SubmitActivity.this, "failed! " + response.message() + " " +
+//                                    response.code(),
+//                            Toast.LENGTH_SHORT).show();
+                    mPermissionDialog.dismiss();
+                    showFailureDialog();
+
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Log.e("TAG", "Network request failed " + t.toString());
+                mPermissionDialog.dismiss();
+                showFailureDialog();
                 Toast.makeText(SubmitActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }
 
 
+
     private void showPermissionDialog() {
-        final Dialog alertDialog = new Dialog(SubmitActivity.this);
-        alertDialog.setContentView(R.layout.dialog_permission);
-        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        ImageView cancelPermission = alertDialog.findViewById(R.id.imageView_no);
-        Button givePermission = alertDialog.findViewById(R.id.button_yes);
-        //TO DO IMPLEMENT IN ON START
-        alertDialog.show();
+        mPermissionDialog = new Dialog(SubmitActivity.this);
+        mPermissionDialog.setContentView(R.layout.dialog_permission);
+        Objects.requireNonNull(mPermissionDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ImageView cancelPermission = mPermissionDialog.findViewById(R.id.imageView_no);
+        Button givePermission = mPermissionDialog.findViewById(R.id.button_yes);
+        mPermissionDialog.show();
         cancelPermission.setOnClickListener(view -> {
-            //implement in onStop
-            alertDialog.dismiss();
+            mPermissionDialog.dismiss();
         });
 
         givePermission.setOnClickListener(view -> showResponse());
     }
 
     private void showFailureDialog() {
+        Dialog failureDialog = new Dialog(SubmitActivity.this);
+        failureDialog.setContentView(R.layout.dialog_failure);
+        Objects.requireNonNull(failureDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        failureDialog.show();
+        failureDialog.setCanceledOnTouchOutside(true);
+
     }
 
     private void showSuccessDialog() {
+        Dialog successDialog = new Dialog(SubmitActivity.this);
+        successDialog.setContentView(R.layout.dialog_success);
+        Objects.requireNonNull(successDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        successDialog.show();
+        successDialog.setCanceledOnTouchOutside(true);
+
 
     }
 

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/custom_dialog_bg"
     android:orientation="vertical">
 
     <LinearLayout
@@ -22,12 +23,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="147dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="129dp"
+            android:layout_height="102dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="false"
             android:layout_centerInParent="true"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/ic_baseline_warning_24"
             android:contentDescription="@string/connection_error_message" />
 
