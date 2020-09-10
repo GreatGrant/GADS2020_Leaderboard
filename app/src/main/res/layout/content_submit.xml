@@ -31,7 +31,7 @@
         android:autofillHints=""
         android:background="@color/white"
         android:cursorVisible="true"
-        android:hint="@string/form_surname"
+        android:hint="@string/name"
         android:inputType="text"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
