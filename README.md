@@ -1,4 +1,4 @@
-GADS LEADERBOARD is a basic app which fetches data from an API and populates it into a Recycler view. Built using the retrofit library, tab lyouts and fragments
+GADS LEADERBOARD is a basic app which fetches data from an API and populates it into a Recycler view. Built using the retrofit library, tab layouts and fragments.
 
 ![Gads1](https://user-images.githubusercontent.com/62026220/92678703-868a4b00-f31e-11ea-816f-16f9343cf63f.png)
 ![Gads2](https://user-images.githubusercontent.com/62026220/92678707-8722e180-f31e-11ea-9646-4adfab55e77f.png)
